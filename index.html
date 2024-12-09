@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark">
+
+    <div class="container my-5 w-75">
+        <h1 class="py-3 text-white">your product</h1>
+
+        <div class="w-75 mx-auto">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" oninput="validationInput(this)" id="productName" placeholder="product Name">
+                <div class="alert alert-danger p-1 mt-1 d-none">
+                    <small>name shoud be 3 to 8 character or digit</small>
+                </div>
+                <label for="productName">product Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" oninput="validationInput(this)" id="productPrice" placeholder="product Price">
+                <div class="alert alert-danger p-1 mt-1 d-none">
+                    <small>name shoud be 10 to 100</small>
+                </div>
+                <label for="productPrice">product Price</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" list="Category" oninput="validationInput(this)" class="form-control" id="productCategory"
+                    placeholder="product Category">
+                    <div class="alert alert-danger p-1 mt-1 d-none">
+                        <small>name shoud be tv or mobile or screen or tablet</small>
+                    </div>
+                <label for="productCategory">product Category</label>
+                <datalist id="Category">
+                    <option value="tv">
+                    <option value="laptop">
+                    <option value="mobile">
+                    <option value="screen">
+                    <option value="tablet">
+                </datalist>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" oninput="validationInput(this)" placeholder="productDesc" id="productDesc"></textarea>
+                <div class="alert alert-danger p-1 mt-1 d-none">
+                    <small>name shoud be 10 to 20 character</small>
+                </div>
+                <label for="productDesc">product Description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="file" accept="Image/*" class="form-control" id="productImage" placeholder="product Image">
+                <label for="productImage">product Image</label>
+            </div>
+            <button id="addBtn" disabled class="btn btn-outline-primary my-3" onclick="adding()"> add product</button>
+            <button id="updateBtn" class="btn btn-outline-info my-3 d-none" onclick="updating()">Update Product</button>
+
+            <div class="form-floating mt-5">
+                <input type="text" class="form-control" oninput="search(this.value)" id="searchProduct" placeholder="search Product">
+                <label for="searchProduct">search...</label>
+            </div>
+
+        </div>
+        <div class="row" id="myData">
+            
+        </div>
+        
+        
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
